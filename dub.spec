@@ -1,3 +1,9 @@
+%ifarch aarch64 armv7hl
+%bcond_with tests
+%else
+%bcond_without tests
+%endif
+
 Name:           dub
 Version:        1.23.0
 Release:        %autorelease
@@ -29,6 +35,7 @@ install -Dpm0644 scripts/bash-completion/dub.bash %{buildroot}%{_datadir}/bash-c
 install -Dpm0644 -t %{buildroot}%{_datadir}/fish/completions scripts/fish-completion/dub.fish
 install -Dpm0644 -t %{buildroot}%{_datadir}/zsh/site-functions scripts/zsh-completion/_dub
 
+%if %{with tests}
 %check
 ./bin/dub test
 # Compiler to use for the test suite
@@ -40,6 +47,7 @@ export PATH="%{buildroot}%{_bindir}:$PATH"
 pushd test
 # Neuter the test suite for now, as it depends on a lot of unpackaged modules
 ./run-unittest.sh || true
+%endif
 
 %files
 %license LICENSE
