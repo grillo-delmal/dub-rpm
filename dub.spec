@@ -9,6 +9,8 @@ License:        MIT
 URL:            https://github.com/dlang/dub
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 
+Patch0:         dub_1.29.2_writable-create-check.patch
+
 ExclusiveArch:  %{ldc_arches}
 
 BuildRequires:  curl-devel
@@ -18,7 +20,7 @@ BuildRequires:  ldc
 DUB is a package and build manager for D applications and libraries.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
 ldmd2 -run build.d %{_d_optflags}

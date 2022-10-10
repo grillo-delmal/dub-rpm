@@ -1,0 +1,16 @@
+diff --git a/source/dub/internal/utils.d b/source/dub/internal/utils.d
+index 345385b2..914ff498 100644
+--- a/source/dub/internal/utils.d
++++ b/source/dub/internal/utils.d
+@@ -109,8 +109,10 @@ bool isWritableDir(NativePath p, bool create_if_missing = false)
+ {
+ 	import std.random;
+ 	auto fname = p ~ format("__dub_write_test_%08X", uniform(0, uint.max));
++	try {
+ 	if (create_if_missing && !exists(p.toNativeString())) mkdirRecurse(p.toNativeString());
+-	try openFile(fname, FileMode.createTrunc).close();
++	openFile(fname, FileMode.createTrunc).close();
++	} 
+ 	catch (Exception) return false;
+ 	remove(fname.toNativeString());
+ 	return true;
