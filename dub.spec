@@ -1,11 +1,7 @@
-%ifarch aarch64 armv7hl
 %bcond_with tests
-%else
-%bcond_without tests
-%endif
 
 Name:           dub
-Version:        1.23.0
+Version:        1.29.1
 Release:        %autorelease
 Summary:        Package and build management system for D
 
