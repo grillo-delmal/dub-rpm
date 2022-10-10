@@ -1,7 +1,7 @@
 %bcond_with tests
 
 Name:           dub
-Version:        1.29.1
+Version:        1.29.2
 Release:        %autorelease
 Summary:        Package and build management system for D
 
