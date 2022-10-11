@@ -1,15 +1,21 @@
 %bcond_with tests
 
+%define dub_ver    1.29.2
+%define dub_dist   318
+%define dub_commit 5650b7440e0cda8df4fbc9108ba600792a737781
+%define dub_short  5650b744
+
 Name:           dub
-Version:        1.29.2
+Version:        v%{dub_ver}^%{dub_dist}.git%{dub_short}
 Release:        %autorelease
 Summary:        Package and build management system for D
 
 License:        MIT
 URL:            https://github.com/dlang/dub
-Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{dub_commit}/%{name}-%{dub_short}.tar.gz
 
 Patch0:         dub_1.29.2_writable-create-check.patch
+Patch1:         dub_1.29.2_versionrange-fix.patch
 
 ExclusiveArch:  %{ldc_arches}
 
@@ -20,7 +26,7 @@ BuildRequires:  ldc
 DUB is a package and build manager for D applications and libraries.
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n %{name}-%{dub_commit}
 
 %build
 ldmd2 -run build.d %{_d_optflags}
