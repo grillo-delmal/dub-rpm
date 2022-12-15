@@ -1,9 +1,9 @@
 %bcond_with tests
 
-%define dub_ver    1.29.2
-%define dub_dist   318
-%define dub_commit 5650b7440e0cda8df4fbc9108ba600792a737781
-%define dub_short  5650b744
+%define dub_ver    1.30.0
+%define dub_dist   53
+%define dub_commit 1330c9d7bfee19421ec23b3034d2584f6142f8c9
+%define dub_short  1330c9d7
 
 Name:           dub
 Version:        v%{dub_ver}^%{dub_dist}.git%{dub_short}
@@ -13,9 +13,6 @@ Summary:        Package and build management system for D
 License:        MIT
 URL:            https://github.com/dlang/dub
 Source0:        %{url}/archive/%{dub_commit}/%{name}-%{dub_short}.tar.gz
-
-Patch0:         dub_1.29.2_writable-create-check.patch
-Patch1:         dub_1.29.2_versionrange-fix.patch
 
 ExclusiveArch:  %{ldc_arches}
 
