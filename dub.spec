@@ -6,7 +6,7 @@
 %define dub_short  1330c9d7
 
 Name:           dub
-Version:        v%{dub_ver}^%{dub_dist}.git%{dub_short}
+Version:        %{dub_ver}^%{dub_dist}.git%{dub_short}
 Release:        %autorelease
 Summary:        Package and build management system for D
 
