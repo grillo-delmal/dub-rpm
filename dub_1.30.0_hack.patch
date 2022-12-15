@@ -1,0 +1,16 @@
+diff --git a/source/dub/internal/vibecompat/core/file.d b/source/dub/internal/vibecompat/core/file.d
+index 84678573..8e0eadde 100644
+--- a/source/dub/internal/vibecompat/core/file.d
++++ b/source/dub/internal/vibecompat/core/file.d
+@@ -246,8 +246,10 @@ FileInfo getFileInfo(string path)
+ */
+ void ensureDirectory(NativePath path)
+ {
+-	if (!existsDirectory(path))
++	if (!existsDirectory(path)) {
++		logDiagnostic("creating stuff: " ~ path.toNativeString());
+ 		mkdirRecurse(path.toNativeString());
++	}
+ }
+ 
+ /**

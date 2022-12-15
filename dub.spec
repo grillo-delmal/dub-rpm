@@ -14,6 +14,8 @@ License:        MIT
 URL:            https://github.com/dlang/dub
 Source0:        %{url}/archive/%{dub_commit}/%{name}-%{dub_short}.tar.gz
 
+Patch0:         dub_1.30.0_hack.patch
+
 ExclusiveArch:  %{ldc_arches}
 
 BuildRequires:  curl-devel
