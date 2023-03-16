@@ -1,4 +1,4 @@
-%ifarch aarch64 armv7hl
+%ifarch aarch64 armv7hl ppc64le
 %bcond_with tests
 %else
 %bcond_without tests
