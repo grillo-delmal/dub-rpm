@@ -1,3 +1,8 @@
+results_*
+review-*
+*.src.rpm
+*.tar.gz
+
 /dub-1.23.0.tar.gz
 /dub-1.31.1.tar.gz
 /dub-1.33.1.tar.gz

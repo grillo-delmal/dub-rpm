@@ -5,13 +5,14 @@
 %endif
 
 Name:           dub
-Version:        1.33.1
+Version:        1.34.0
 Release:        %autorelease
 Summary:        Package and build management system for D
 
 License:        MIT
 URL:            https://github.com/dlang/dub
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0:         dub_1.34.0_no-copy.patch
 
 ExclusiveArch:  %{ldc_arches}
 
@@ -22,7 +23,7 @@ BuildRequires:  ldc
 DUB is a package and build manager for D applications and libraries.
 
 %prep
-%autosetup
+%autosetup -p1
 
 %build
 ldmd2 -run build.d %{_d_optflags}
