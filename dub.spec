@@ -5,14 +5,14 @@
 %endif
 
 Name:           dub
-Version:        1.34.0
+Version:        1.38.0
 Release:        %autorelease
 Summary:        Package and build management system for D
 
 License:        MIT
 URL:            https://github.com/dlang/dub
 Source0:        %{url}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         dub_1.34.0_no-copy.patch
+Patch0:         dub_1.38.0_no-copy.patch
 
 ExclusiveArch:  %{ldc_arches}
 
